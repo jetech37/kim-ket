@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim Ket · Yoga, Reiki, Meditation & Tarot</title>
+<meta name="description" content="Gentle, trauma-informed yoga, Reiki, meditation and tarot sessions with Kim Ket, in person and online.">
+<meta name="theme-color" content="#2F3A30">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kim Ket · Yoga, Reiki, Meditation & Tarot">
+<meta property="og:description" content="Gentle, trauma-informed sessions to help you slow down, soften, and reconnect with what is already whole in you.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23ECE3D4'/%3E%3Cg fill='none' stroke='%23B85C38' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M16 23V12'/%3E%3Cpath d='M16 12c-3 2-5 6-5 9 3 0 5-2 5-5M16 12c3 2 5 6 5 9-3 0-5-2-5-5'/%3E%3Cpath d='M9 22c2.5 1 4.5 1 7 0 2.5 1 4.5 1 7 0'/%3E%3C/g%3E%3C/svg%3E">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#ECE3D4;      /* warm sand base */
+    --ground-2:#E3D8C5;    /* slightly deeper sand */
+    --sage-deep:#2F3A30;   /* deep forest sage, dark sections + headings */
+    --sage:#6E7E63;        /* mid sage */
+    --sage-soft:#A9B49B;   /* soft sage tint */
+    --terracotta:#B85C38;  /* primary accent */
+    --terracotta-text:#9A4626; /* terracotta for small text on the light grounds (5.4:1) */
+    --clay:#CE8A5C;        /* warm secondary accent */
+    --ink:#322C24;         /* warm near-black body text */
+    --ink-soft:#5A5247;    /* muted text */
+    --paper:#F5EFE3;       /* lightest card surface */
+
+    --display:"Fraunces", Georgia, serif;
+    --body:"Hanken Grotesk", system-ui, sans-serif;
+
+    --maxw:1140px;
+    --gut:clamp(20px, 5vw, 64px);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--display);
+    font-weight:400;
+    font-variation-settings:"opsz" 144, "SOFT" 50, "WONK" 0;
+    line-height:1.05;
+    margin:0;
+    color:var(--sage-deep);
+  }
+  p{margin:0 0 1.1em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);}
+  .eyebrow{
+    font-family:var(--body);
+    font-size:.74rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--terracotta-text);
+  }
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px;border-radius:6px;}
+  [hidden]{display:none!important;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:var(--body);font-weight:600;font-size:.96rem;
+    padding:.85em 1.5em;border-radius:999px;
+    border:1.5px solid transparent;cursor:pointer;
+    transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn-solid{background:var(--terracotta);color:var(--paper);}
+  .btn-solid:hover{transform:translateY(-2px);background:#a64f2e;}
+  .btn-ghost{border-color:var(--sage-deep);color:var(--sage-deep);}
+  .btn-ghost:hover{transform:translateY(-2px);background:var(--sage-deep);color:var(--paper);}
+  .btn-light{border-color:var(--sage-soft);color:var(--paper);}
+  .btn-light:hover{transform:translateY(-2px);background:var(--paper);color:var(--sage-deep);border-color:var(--paper);}
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--ground) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid color-mix(in srgb, var(--sage) 25%, transparent);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:.9rem var(--gut);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{
+    font-family:var(--display);font-size:1.35rem;font-weight:500;
+    font-variation-settings:"opsz" 40, "SOFT" 50;
+    color:var(--sage-deep);letter-spacing:.01em;
+  }
+  .brand span{color:var(--terracotta);}
+  .nav-links{display:flex;gap:1.6rem;align-items:center;}
+  .nav-links a{
+    font-size:.92rem;font-weight:500;color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--terracotta);}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.3rem;}
+  .nav-toggle span{display:block;width:24px;height:2px;background:var(--sage-deep);margin:5px 0;transition:.3s;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:clamp(3rem,9vw,7rem) 0 clamp(3.5rem,8vw,6rem);overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;}
+  .hero h1{
+    font-size:clamp(2.7rem,6.5vw,4.6rem);
+    font-weight:300;letter-spacing:-.01em;margin:.55em 0 .5em;
+  }
+  .hero h1 em{font-style:italic;color:var(--terracotta);font-weight:400;}
+  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:34ch;margin-bottom:2rem;}
+  .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;}
+
+  /* breathing motif */
+  .breath{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:440px;margin:0 auto;width:100%;}
+  .breath svg{width:100%;height:auto;color:var(--sage);}
+  .breath .ring{transform-origin:center;animation:breathe 9s ease-in-out infinite;}
+  .breath .ring.r2{animation-delay:-3s;opacity:.6;}
+  .breath .ring.r3{animation-delay:-6s;opacity:.35;}
+  @keyframes breathe{
+    0%,100%{transform:scale(.82);opacity:.85;}
+    50%{transform:scale(1);opacity:.3;}
+  }
+  .breath .glyph{color:var(--terracotta);}
+
+  /* ---------- section scaffolding ---------- */
+  section{position:relative;}
+  .band{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+  .band-sage{background:var(--sage-deep);color:var(--paper);}
+  .band-sage h2,.band-sage h3{color:var(--paper);}
+  .band-paper{background:var(--ground-2);}
+  .sec-head{max-width:46ch;margin-bottom:2.8rem;}
+  .sec-head h2{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:300;margin:.45em 0 .35em;}
+  .sec-head p{color:var(--ink-soft);font-size:1.08rem;}
+  .band-sage .sec-head p{color:var(--sage-soft);}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+  .portrait{
+    aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative;
+    background:
+      radial-gradient(120% 90% at 30% 20%, var(--sage-soft), transparent 60%),
+      linear-gradient(160deg, var(--sage) 0%, var(--sage-deep) 100%);
+    display:grid;place-items:center;text-align:center;
+    box-shadow:0 24px 50px -28px rgba(47,58,48,.55);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;}
+  .portrait .ph-mark{width:46%;color:var(--paper);opacity:.75;}
+  .about-body h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:300;margin-bottom:.6em;}
+  .about-body .sig{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--terracotta);margin-top:.4em;}
+
+  /* ---------- services ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.1rem,2.5vw,1.6rem);}
+  .svc{
+    background:var(--paper);border-radius:16px;padding:2.1rem;
+    border:1px solid color-mix(in srgb, var(--sage) 22%, transparent);
+    display:flex;flex-direction:column;gap:.5rem;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .svc:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(47,58,48,.5);}
+  .svc-icon{width:56px;height:56px;color:var(--terracotta);margin-bottom:.5rem;}
+  .svc h3{font-size:1.65rem;font-weight:400;}
+  .svc p{color:var(--ink-soft);font-size:1rem;margin-bottom:1rem;}
+  .svc-foot{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--sage) 18%,transparent);}
+  .price{font-family:var(--display);font-size:1.5rem;color:var(--sage-deep);}
+  .price small{font-family:var(--body);font-size:.78rem;color:var(--ink-soft);font-weight:500;display:block;letter-spacing:.04em;}
+  .svc-foot a{font-weight:600;font-size:.92rem;color:var(--terracotta-text);display:inline-flex;align-items:center;gap:.4em;}
+  .svc-foot a:hover{gap:.7em;}
+
+  /* ---------- gallery ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px;}
+  .tile{border-radius:12px;overflow:hidden;position:relative;display:grid;place-items:center;color:var(--paper);}
+  .tile{background:var(--ground);}
+  .tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .tile:hover img{transform:scale(1.04);}
+  .tile.big{grid-column:span 2;grid-row:span 2;}
+  .tile.tall{grid-row:span 2;}
+  .g1{background:linear-gradient(150deg,var(--sage),var(--sage-deep));}
+  .g2{background:linear-gradient(150deg,var(--clay),var(--terracotta));}
+  .g3{background:linear-gradient(150deg,var(--sage-soft),var(--sage));}
+  .g4{background:linear-gradient(150deg,var(--terracotta),#8c4126);}
+  .g5{background:linear-gradient(150deg,var(--ground-2),var(--clay));color:var(--sage-deep);}
+
+  /* ---------- testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.1rem,2.5vw,1.8rem);}
+  .quote{
+    background:color-mix(in srgb,var(--paper) 14%, transparent);
+    border:1px solid color-mix(in srgb,var(--sage-soft) 30%, transparent);
+    border-radius:16px;padding:2rem;
+  }
+  .quote .mark{font-family:var(--display);font-size:3rem;line-height:.5;color:var(--clay);height:1.1rem;display:block;}
+  .quote p{font-family:var(--display);font-style:italic;font-size:1.18rem;color:var(--paper);line-height:1.45;}
+  .quote .who{font-family:var(--body);font-style:normal;font-size:.86rem;letter-spacing:.04em;color:var(--sage-soft);font-weight:600;}
+
+  /* ---------- booking + contact ---------- */
+  .reach{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start;}
+  .booking-card{
+    background:var(--sage-deep);color:var(--paper);border-radius:18px;padding:clamp(1.8rem,3vw,2.6rem);
+  }
+  .booking-card h3{color:var(--paper);font-size:1.9rem;font-weight:300;margin-bottom:.5em;}
+  .booking-card p{color:var(--sage-soft);}
+  .booking-card ul{list-style:none;padding:0;margin:1.2rem 0 1.8rem;}
+  .booking-card li{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.7rem;color:var(--paper);font-size:.98rem;}
+  .booking-card li::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--clay);margin-top:.55em;}
+
+  form{display:grid;gap:1rem;}
+  .field{display:grid;gap:.4rem;}
+  label{font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--ink-soft);}
+  input,textarea,select{
+    font-family:var(--body);font-size:1rem;color:var(--ink);
+    background:var(--paper);border:1.5px solid color-mix(in srgb,var(--sage) 30%, transparent);
+    border-radius:10px;padding:.8em .9em;width:100%;transition:border-color .2s ease;
+  }
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--terracotta);}
+  textarea{resize:vertical;min-height:120px;}
+  .form-note{font-size:.82rem;color:var(--ink-soft);}
+  .form-status{font-size:.95rem;font-weight:600;color:var(--sage-deep);}
+  .form-status.err{color:var(--terracotta-text);}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--sage-deep);color:var(--sage-soft);padding:3rem 0 2.2rem;}
+  .foot-inner{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center;}
+  .foot-brand{font-family:var(--display);font-size:1.5rem;color:var(--paper);font-variation-settings:"opsz" 40,"SOFT" 50;}
+  .foot-links{display:flex;gap:1.3rem;flex-wrap:wrap;}
+  .foot-links a{font-size:.9rem;color:var(--sage-soft);transition:color .2s;}
+  .foot-links a:hover{color:var(--paper);}
+  .foot-fine{width:100%;border-top:1px solid color-mix(in srgb,var(--sage) 35%,transparent);margin-top:2rem;padding-top:1.4rem;font-size:.8rem;color:color-mix(in srgb,var(--sage-soft) 80%,transparent);}
+
+  /* ---------- reveal animation ---------- */
+  .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:880px){
+    .hero-grid,.about-grid,.reach{grid-template-columns:1fr;}
+    .breath{order:-1;max-width:320px;}
+    .services-grid,.quotes{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+      background:var(--ground);border-bottom:1px solid color-mix(in srgb,var(--sage) 25%,transparent);
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .nav-links.open{max-height:320px;}
+    .nav-links a{padding:.9rem var(--gut);width:100%;border-top:1px solid color-mix(in srgb,var(--sage) 18%,transparent);}
+    .nav-toggle{display:block;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">Kim Ket<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery" data-needs="photos">Gallery</a>
+      <a href="#words" data-needs="testimonials">Kind words</a>
+      <a href="#book">Book</a>
+      <a href="#contact" class="btn btn-ghost" style="padding:.55em 1.2em;">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Yoga · Reiki · Meditation · Tarot</span>
+      <h1>Come home to your <em>breath</em>, your body, your knowing.</h1>
+      <p class="lead">Gentle, grounded sessions to help you slow down, soften, and reconnect with what is already whole in you.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-solid">Book a session</a>
+        <a href="#about" class="btn btn-ghost">Read my story</a>
+      </div>
+    </div>
+    <div class="breath reveal" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.1">
+        <circle class="ring" cx="100" cy="100" r="86"/>
+        <circle class="ring r2" cx="100" cy="100" r="66"/>
+        <circle class="ring r3" cx="100" cy="100" r="46"/>
+        <g class="glyph" stroke-width="1.4">
+          <!-- simple lotus -->
+          <path d="M100 132c0-22 0-38 0-46"/>
+          <path d="M100 86c-9 6-15 18-15 30 9 0 15-6 15-14"/>
+          <path d="M100 86c9 6 15 18 15 30-9 0-15-6-15-14"/>
+          <path d="M100 86c-18 2-30 14-32 30 14 2 26-4 30-16"/>
+          <path d="M100 86c18 2 30 14 32 30-14 2-26-4-30-16"/>
+          <path d="M72 116c8 4 18 4 28 0 10 4 20 4 28 0"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="band band-paper" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait reveal" id="portrait">
+      <svg class="ph-mark" viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <path d="M50 70V30"/><path d="M50 30c-9 6-15 18-15 30 9 0 15-6 15-14"/><path d="M50 30c9 6 15 18 15 30-9 0-15-6-15-14"/>
+        <path d="M50 30c-18 2-30 14-32 30 14 2 26-4 30-16"/><path d="M50 30c18 2 30 14 32 30-14 2-26-4-30-16"/><path d="M22 60c8 4 18 4 28 0 10 4 20 4 28 0"/>
+      </svg>
+    </div>
+    <div class="about-body reveal">
+      <span class="eyebrow">A little about me</span>
+      <h2>Hi, I'm Kim Ket</h2>
+      <p>I was born and raised in Cambodia and moved to the United States in my late teens, carrying with me a deep love for the practices that have shaped my life. For more than ten years I have taught yoga and meditation, worked as a Reiki master, and read tarot for people moving through change.</p>
+      <p>My path led me to India, where I studied yoga close to its roots and learned to truly listen, to the breath, to the body, to the quiet wisdom underneath. Every session I offer is trauma informed, which means we move gently, at your pace, with your comfort and consent held at the center.</p>
+      <p>I am also a medical assistant by profession, so I hold both worlds with care: the practical and the intuitive, the clinical and the soulful. I believe healing is not about fixing what is broken. It is about remembering what is already steady underneath the noise.</p>
+      <p class="sig">With warmth, Kim Ket</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What I offer</span>
+      <h2>Four ways to slow down and listen</h2>
+      <p>Each practice is its own doorway. Come through whichever one is calling you, or weave a few together over time.</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- Yoga -->
+      <article class="svc reveal">
+        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="11" r="4"/>
+          <path d="M24 16v9"/>
+          <path d="M24 25c-7 2-13 5-18 6M24 25c7 2 13 5 18 6"/>
+          <path d="M24 25c-4 4-7 9-9 14M24 25c4 4 7 9 9 14"/>
+        </svg>
+        <h3>Yoga</h3>
+        <p>Breath-led, gentle movement that meets your body where it is today. Trauma informed and open to every level, with no flexibility required.</p>
+        <div class="svc-foot">
+          <span class="price">$75<small>60 min session</small></span>
+          <a href="#book">Book yoga &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Reiki -->
+      <article class="svc reveal">
+        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 30c-2-2-3-5-3-8 0-2 2-3 3-1l2 3V12c0-2 3-2 3 0v9"/>
+          <path d="M22 21v-2c0-2 3-2 3 0v2M25 21v-1c0-2 3-2 3 0v3c0 6-3 11-8 13"/>
+          <path d="M31 12c2-1 4-1 6 0M33 8c2-1 5-1 8 1M32 17c2 0 4 1 6 2"/>
+        </svg>
+        <h3>Reiki</h3>
+        <p>A calming, hands-on (or hands-near) energy session to ease tension and invite your nervous system back to rest.</p>
+        <div class="svc-foot">
+          <span class="price">$90<small>60 min session</small></span>
+          <a href="#book">Book reiki &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Meditation -->
+      <article class="svc reveal">
+        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="13" r="4"/>
+          <path d="M24 18c-5 1-9 5-10 11 4 2 7 2 10 2s6 0 10-2c-1-6-5-10-10-11Z"/>
+          <path d="M14 31c-3 1-5 2-6 3M34 31c3 1 5 2 6 3"/>
+          <path d="M19 14c-3-2-5-2-7-1M29 14c3-2 5-2 7-1"/>
+        </svg>
+        <h3>Meditation</h3>
+        <p>Guided stillness, breathwork, and simple practices you can carry into daily life. For racing minds and tired hearts.</p>
+        <div class="svc-foot">
+          <span class="price">$60<small>45 min session</small></span>
+          <a href="#book">Book meditation &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Tarot -->
+      <article class="svc reveal">
+        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="13" y="8" width="22" height="32" rx="3"/>
+          <path d="M24 16l2 5 5 1-4 4 1 5-4-3-4 3 1-5-4-4 5-1Z"/>
+          <path d="M19 8l-2 3M29 8l2 3"/>
+        </svg>
+        <h3>Tarot Reading</h3>
+        <p>An intuitive, judgment-free reading to bring clarity to a question or season. A conversation, not a fortune.</p>
+        <div class="svc-foot">
+          <span class="price">$70<small>per reading</small></span>
+          <a href="#book">Book tarot &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="band band-paper" id="gallery" hidden>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A glimpse</span>
+      <h2>The space we share</h2>
+      <p>A few moments from sessions and the space where we practice.</p>
+    </div>
+    <div class="gallery reveal" id="gallery-grid"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="band band-sage" id="words" hidden>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--clay)">Kind words</span>
+      <h2>What clients share</h2>
+      <p>A few words from people I have had the honor of working with.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- ============ BOOK + CONTACT ============ -->
+<section class="band" id="book">
+  <div class="wrap reach">
+    <div class="booking-card reveal">
+      <span class="eyebrow" style="color:var(--clay)">Ready when you are</span>
+      <h3>Book a session</h3>
+      <p>Choose a time that suits you and I will be in touch to confirm the details.</p>
+      <ul>
+        <li>Available in person and online, wherever you are</li>
+        <li>Sessions run 45 to 60 minutes</li>
+        <li>New here? Reach out first and we will find the right fit</li>
+      </ul>
+      <a href="#contact" class="btn btn-light" id="schedule-link">Request a time</a>
+    </div>
+
+    <div class="reveal" id="contact">
+      <span class="eyebrow">Or send a note</span>
+      <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);font-weight:300;margin:.4em 0 .8em;">Get in touch</h2>
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="First and last" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="interest">What are you drawn to?</label>
+          <select id="interest" name="interest">
+            <option>Yoga</option>
+            <option>Reiki</option>
+            <option>Meditation</option>
+            <option>Tarot reading</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" placeholder="Tell me a little about what you are looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">Send message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">I usually reply within a day or two. Your details stay private.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand">Kim Ket</div>
+    <nav class="foot-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery" data-needs="photos">Gallery</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+      <a href="#" id="ig-link" target="_blank" rel="noopener" hidden>Instagram</a>
+    </nav>
+    <div class="foot-fine">
+      © <span id="year"></span> Kim Ket · Yoga, Reiki, Meditation &amp; Tarot · Trauma informed &amp; held with care
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Kim's details ─────────────────────────────────────────────────────
+     Fill these in; anything left empty simply stays hidden, so the page is
+     never broken or showing placeholders. */
+  const SITE = {
+    email: "kimsokun.ket@gmail.com", // where contact-form messages go
+    formspreeId: "",    // optional: free Formspree form ID (e.g. "xyzabcd") to send without opening an email app
+    bookingUrl: "",     // her Google Calendar booking page link (Appointment schedule → Share → copy link); without one, "Request a time" goes to the contact form
+    instagram: "",      // e.g. "https://instagram.com/yourhandle"
+    portrait: "",       // e.g. "photos/kim.jpg" (4:5 works best)
+    photos: [           // e.g. { src: "photos/studio.jpg", alt: "Mats and candles in the studio" }
+    ],
+    testimonials: [     // real words only, e.g. { quote: "…", who: "Sarah, Portland" }
+    ]
+  };
+
+  const $ = (s) => document.querySelector(s);
+  $('#year').textContent = new Date().getFullYear();
+
+  // portrait
+  if (SITE.portrait) $('#portrait').innerHTML = `<img src="${SITE.portrait}" alt="Kim Ket">`;
+
+  // gallery: first photo large, third tall, the rest regular tiles
+  if (SITE.photos.length) {
+    const shapes = ['big', '', 'tall', '', '', ''];
+    $('#gallery-grid').innerHTML = SITE.photos.map((ph, i) =>
+      `<div class="tile ${shapes[i % shapes.length]}"><img src="${ph.src}" alt="${(ph.alt || '').replace(/"/g, '&quot;')}" loading="lazy"></div>`).join('');
+    $('#gallery').hidden = false;
+  }
+
+  // testimonials (only real ones are ever listed)
+  if (SITE.testimonials.length) {
+    const quotes = $('#quotes');
+    SITE.testimonials.forEach((t) => {
+      const f = document.createElement('figure'); f.className = 'quote reveal';
+      f.innerHTML = '<span class="mark">&ldquo;</span><p></p><figcaption class="who"></figcaption>';
+      f.querySelector('p').textContent = t.quote; f.querySelector('.who').textContent = t.who || '';
+      quotes.appendChild(f);
+    });
+    $('#words').hidden = false;
+  }
+
+  // nav/footer links for sections that aren't shown
+  document.querySelectorAll('[data-needs]').forEach((a) => { a.hidden = !SITE[a.dataset.needs].length; });
+
+  // booking
+  if (SITE.bookingUrl) {
+    const b = $('#schedule-link');
+    b.href = SITE.bookingUrl; b.target = '_blank'; b.rel = 'noopener'; b.textContent = 'Open the calendar';
+  }
+
+  // instagram
+  if (SITE.instagram) { const ig = $('#ig-link'); ig.href = SITE.instagram; ig.hidden = false; }
+
+  // "Book yoga →" etc. pre-select that practice in the contact form
+  document.querySelectorAll('.svc-foot a').forEach((a) => a.addEventListener('click', () => {
+    const name = a.closest('.svc').querySelector('h3').textContent.trim().toLowerCase();
+    const opt = [...$('#interest').options].find((o) => o.text.toLowerCase().startsWith(name.split(' ')[0]));
+    if (opt) $('#interest').value = opt.value;
+  }));
+
+  // contact form: Formspree if set up, otherwise the visitor's email app
+  const form = $('#contact-form'), status = $('#form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.classList.remove('err');
+    const name = $('#name').value.trim(), email = $('#email').value.trim();
+    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
+      status.textContent = 'Please add your name and a valid email so I can reply.'; status.classList.add('err');
+      (name ? $('#email') : $('#name')).focus(); return;
+    }
+    const data = { name, email, interest: $('#interest').value, message: $('#message').value.trim() };
+    if (SITE.formspreeId) {
+      status.textContent = 'Sending…';
+      try {
+        const r = await fetch('https://formspree.io/f/' + SITE.formspreeId, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+        if (!r.ok) throw new Error(r.status);
+        form.reset(); status.textContent = 'Thank you, your message is on its way. I will be in touch soon.';
+      } catch (err) {
+        status.textContent = 'Sorry, that did not send. Please try again' + (SITE.email ? ' or email ' + SITE.email : '') + '.'; status.classList.add('err');
+      }
+    } else if (SITE.email) {
+      const body = `Name: ${data.name}\nEmail: ${data.email}\nInterested in: ${data.interest}\n\n${data.message}`;
+      location.href = 'mailto:' + SITE.email + '?subject=' + encodeURIComponent('Session enquiry: ' + data.interest) + '&body=' + encodeURIComponent(body);
+      status.textContent = 'Your email app should open with your message ready to send.';
+    } else {
+      status.textContent = 'The contact form is not connected yet.'; status.classList.add('err');
+    }
+  });
+
+  // mobile nav
+  const toggle = $('.nav-toggle'), links = $('.nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+    links.classList.remove('open'); toggle.setAttribute('aria-expanded', false); toggle.setAttribute('aria-label', 'Open menu');
+  }));
+
+  // scroll reveal (content is visible anyway if this never runs)
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+</script>
+</body>
+</html>
