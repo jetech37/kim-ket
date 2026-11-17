@@ -28,10 +28,15 @@ Put image files in `photos/`. Resize to ~1600px wide so the page stays fast.
 4. Paste it into `bookingUrl` in `index.html`. The "Request a time" button
    becomes "Open the calendar" and opens her booking page.
 
-## Hosting (GitHub Pages)
+## Hosting at kimket.com (GitHub Pages + Cloudflare DNS)
 
-Settings → Pages → Deploy from a branch → `main`, `/ (root)`. For her domain,
-add it under Custom domain (plus a `CNAME` file containing the domain), then
-at the registrar: `A` records for `@` → 185.199.108.153, 185.199.109.153,
-185.199.110.153, 185.199.111.153, and `CNAME` for `www` → `jetech37.github.io`.
-Remove any forwarding, and tick **Enforce HTTPS** once verified.
+kimket.com is registered at GoDaddy but its DNS is managed in **Cloudflare**,
+so all record changes happen in Cloudflare. `CNAME` tells GitHub Pages the domain.
+
+- Cloudflare → kimket.com → DNS → Records: delete the existing `A` records for
+  `kimket.com` and `www`, then add (all **DNS only**, grey cloud):
+  - `A` `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+  - `AAAA` `@` → 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153
+  - `CNAME` `www` → `jetech37.github.io`
+- GitHub repo → Settings → Pages: deploy from `main` / root, custom domain
+  `kimket.com`, then **Enforce HTTPS** once it's verified.
