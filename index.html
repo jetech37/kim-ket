@@ -164,6 +164,7 @@
   .portrait img{width:100%;height:100%;object-fit:cover;}
   .portrait .ph-mark{width:46%;color:var(--paper);opacity:.75;}
   .about-body h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:300;margin-bottom:.6em;}
+  .about-yt{margin-top:1.4em;}
   .about-body .sig{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--terracotta);margin-top:.4em;}
 
   /* ---------- services ---------- */
@@ -333,6 +334,7 @@
       <p>My path led me to India, where I studied yoga close to its roots and learned to truly listen, to the breath, to the body, to the quiet wisdom underneath. Every session I offer is trauma informed, which means we move gently, at your pace, with your comfort and consent held at the center.</p>
       <p>I am also a medical assistant by profession, so I hold both worlds with care: the practical and the intuitive, the clinical and the soulful. I believe healing is not about fixing what is broken. It is about remembering what is already steady underneath the noise.</p>
       <p class="sig">With warmth, Kim Ket</p>
+      <p class="about-yt"><a class="btn btn-ghost" data-social="youtube" href="#" target="_blank" rel="noopener" hidden>Practice with me on YouTube</a></p>
     </div>
   </div>
 </section>
@@ -496,6 +498,7 @@
       <a href="#gallery" data-needs="photos">Gallery</a>
       <a href="#book">Book</a>
       <a href="#contact">Contact</a>
+      <a href="#" data-social="youtube" target="_blank" rel="noopener" hidden>YouTube</a>
       <a href="#" id="ig-link" target="_blank" rel="noopener" hidden>Instagram</a>
     </nav>
     <div class="foot-fine">
@@ -512,6 +515,7 @@
     email: "kimsokun.ket@gmail.com", // where contact-form messages go
     formspreeId: "",    // optional: free Formspree form ID (e.g. "xyzabcd") to send without opening an email app
     bookingUrl: "",     // her Google Calendar booking page link (Appointment schedule → Share → copy link); without one, "Request a time" goes to the contact form
+    youtube: "https://www.youtube.com/@flowithkimket", // her channel, FlowithKimKet
     instagram: "",      // e.g. "https://instagram.com/yourhandle"
     portrait: "photos/kim.jpg", // 4:5 works best
     photos: [           // e.g. { src: "photos/studio.jpg", alt: "Mats and candles in the studio" }
@@ -557,6 +561,8 @@
 
   // instagram
   if (SITE.instagram) { const ig = $('#ig-link'); ig.href = SITE.instagram; ig.hidden = false; }
+  // youtube
+  document.querySelectorAll('[data-social="youtube"]').forEach((a) => { if (SITE.youtube) { a.href = SITE.youtube; a.hidden = false; } });
 
   // "Book yoga →" etc. pre-select that practice in the contact form
   document.querySelectorAll('.svc-foot a').forEach((a) => a.addEventListener('click', () => {
