@@ -170,6 +170,18 @@
   .creds ul{list-style:none;margin:.7em 0 0;padding:0;display:grid;gap:.45em;}
   .creds li{position:relative;padding-left:1.3em;color:var(--ink-soft);line-height:1.45;}
   .creds li::before{content:"";position:absolute;left:0;top:.55em;width:.5em;height:.5em;border-radius:50% 0;background:var(--terracotta);transform:rotate(-45deg);opacity:.8;}
+  /* ---------- faq ---------- */
+  .faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(1.5rem,5vw,4.5rem);align-items:start;}
+  .faq-list{display:grid;gap:.7rem;}
+  .faq-item{background:var(--paper);border:1px solid rgba(47,58,48,.12);border-radius:12px;padding:0 1.2rem;}
+  .faq-item summary{cursor:pointer;list-style:none;padding:1.05rem 2rem 1.05rem 0;position:relative;font-weight:500;color:var(--sage-deep);font-size:1.05rem;line-height:1.4;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--terracotta);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:translateY(-50%) rotate(45deg);}
+  .faq-item summary:focus-visible{outline:2px solid var(--terracotta);outline-offset:4px;border-radius:6px;}
+  .faq-item p{margin:0 0 1.1rem;color:var(--ink-soft);line-height:1.6;}
+  .faq-grid .sec-head a{color:var(--terracotta);}
+  @media (max-width:880px){.faq-grid{grid-template-columns:1fr}}
   /* ---------- youtube ---------- */
   .yt-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;}
   .yt-logo{width:100%;max-width:360px;height:auto;justify-self:center;filter:drop-shadow(0 18px 30px rgba(47,58,48,.22));}
@@ -524,6 +536,51 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="band band-paper" id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Before you come</span>
+      <h2>Questions people often ask</h2>
+      <p>New to this? That's welcome here. If your question isn't answered, <a href="#contact">send me a note</a>.</p>
+    </div>
+    <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>I've never done yoga, and I'm not flexible. Is this for me?</summary>
+          <p>Yes. You don't need any experience or flexibility, just a willingness to show up as you are. I offer options for every pose, and you're always welcome to rest. We start where your body is today.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What should I wear and bring?</summary>
+          <p>Wear something comfortable you can move and breathe in, like leggings or loose pants and a soft top. Bring water. For in-person yoga I can provide a mat; you're welcome to bring your own. For Reiki, meditation and tarot, everyday clothes are perfect.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens in a first Reiki session?</summary>
+          <p>We start with a short, unhurried conversation about how you're feeling and what you'd like support with. Then you rest fully clothed, lying down or seated, while I place my hands lightly on or just above areas like the head, shoulders and feet. Many people feel warmth, calm or tingling; some simply feel very relaxed or drift off. You can ask me to pause or change anything at any time. Afterward we take a few quiet minutes to talk about what you noticed. Reiki is a complement to medical care, never a replacement for it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does “trauma informed” mean in practice?</summary>
+          <p>It means you are in charge of your own experience. I offer choices instead of commands, I ask before any touch and you can say no at any point without explaining why, and there is no pressure to share your story. We move at your pace, and I pay attention to how you're doing so you feel safe and grounded the whole time.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I have a session online?</summary>
+          <p>Yes. Yoga, meditation, tarot and distance Reiki all work well over video. You just need a quiet space where you won't be interrupted and a phone or computer with a camera. I'll send everything you need when we confirm your time.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is a tarot reading with you like?</summary>
+          <p>Gentle and judgment free. The cards are a way to reflect on a question or a season of your life and to hear your own inner knowing more clearly. A reading is a conversation, not a fortune: you leave with insight and next steps, not predictions you have to worry about.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I pay?</summary>
+          <p>You can pay easily by Venmo, Cash App or Zelle. I'll share my details when we confirm your session.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I need to reschedule?</summary>
+          <p>Life happens. Just let me know as soon as you can and we'll find another time that works for you.</p>
+        </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap foot-inner">
@@ -533,6 +590,7 @@
       <a href="#services">Services</a>
       <a href="#gallery" data-needs="photos">Gallery</a>
       <a href="#book">Book</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="#" data-social="youtube" target="_blank" rel="noopener" hidden>YouTube</a>
       <a href="#" id="ig-link" target="_blank" rel="noopener" hidden>Instagram</a>
