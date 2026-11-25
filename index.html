@@ -14,7 +14,8 @@
 <meta property="og:description" content="Gentle, trauma-informed sessions to help you slow down, soften, and reconnect with what is already whole in you.">
 <meta name="twitter:card" content="summary">
 <meta property="og:image" content="https://kimket.com/photos/kim.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23ECE3D4'/%3E%3Cg fill='none' stroke='%23B85C38' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M16 23V12'/%3E%3Cpath d='M16 12c-3 2-5 6-5 9 3 0 5-2 5-5M16 12c3 2 5 6 5 9-3 0-5-2-5-5'/%3E%3Cpath d='M9 22c2.5 1 4.5 1 7 0 2.5 1 4.5 1 7 0'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -164,7 +165,12 @@
   .portrait img{width:100%;height:100%;object-fit:cover;}
   .portrait .ph-mark{width:46%;color:var(--paper);opacity:.75;}
   .about-body h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:300;margin-bottom:.6em;}
-  .about-yt{margin-top:1.4em;}
+  /* ---------- youtube ---------- */
+  .yt-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+  .yt-logo{width:100%;max-width:360px;height:auto;justify-self:center;filter:drop-shadow(0 18px 30px rgba(47,58,48,.22));}
+  .yt-body h2{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:300;margin-bottom:.5em;}
+  .yt-body p{color:var(--ink-soft);font-size:1.08rem;margin-bottom:1.4em;}
+  @media (max-width:860px){.yt-grid{grid-template-columns:1fr}.yt-logo{max-width:260px}}
   .about-body .sig{font-family:var(--display);font-style:italic;font-size:1.4rem;color:var(--terracotta);margin-top:.4em;}
 
   /* ---------- services ---------- */
@@ -334,7 +340,6 @@
       <p>My path led me to India, where I studied yoga close to its roots and learned to truly listen, to the breath, to the body, to the quiet wisdom underneath. Every session I offer is trauma informed, which means we move gently, at your pace, with your comfort and consent held at the center.</p>
       <p>I am also a medical assistant by profession, so I hold both worlds with care: the practical and the intuitive, the clinical and the soulful. I believe healing is not about fixing what is broken. It is about remembering what is already steady underneath the noise.</p>
       <p class="sig">With warmth, Kim Ket</p>
-      <p class="about-yt"><a class="btn btn-ghost" data-social="youtube" href="#" target="_blank" rel="noopener" hidden>Practice with me on YouTube</a></p>
     </div>
   </div>
 </section>
@@ -428,6 +433,19 @@
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
+<!-- ============ YOUTUBE ============ -->
+<section class="band band-paper" id="youtube" hidden>
+  <div class="wrap yt-grid">
+    <img class="yt-logo reveal" src="assets/flowithkimket.webp" width="640" height="640" alt="FlowithKimKet, Kim's yoga and spiritual channel" loading="lazy">
+    <div class="yt-body reveal">
+      <span class="eyebrow">Free on YouTube</span>
+      <h2>Practice with me anytime</h2>
+      <p>On my channel, FlowithKimKet, I share yoga flows, guided meditations and spiritual reflections you can do at home. Try a class and see how it feels before we meet.</p>
+      <a class="btn btn-solid" data-social="youtube" href="#" target="_blank" rel="noopener" hidden>Watch on YouTube</a>
+    </div>
+  </div>
+</section>
+
 <section class="band band-sage" id="words" hidden>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -564,6 +582,7 @@
   if (SITE.instagram) { const ig = $('#ig-link'); ig.href = SITE.instagram; ig.hidden = false; }
   // youtube
   document.querySelectorAll('[data-social="youtube"]').forEach((a) => { if (SITE.youtube) { a.href = SITE.youtube; a.hidden = false; } });
+  if (SITE.youtube) $('#youtube').hidden = false;
 
   // "Book yoga →" etc. pre-select that practice in the contact form
   document.querySelectorAll('.svc-foot a').forEach((a) => a.addEventListener('click', () => {
